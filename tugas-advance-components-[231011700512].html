@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan Tiket</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <style>
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+    h3 {
+      text-align: center;
+      font-weight: bold;
+      color: #343a40;
+    }
+    .form-label {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .form-control {
+      padding: 12px;
+    }
+    .icon-label {
+      font-weight: 600;
+      color: #495057;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      padding: 12px;
+      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 10px;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+    .form-check-label {
+      font-size: 0.95rem;
+      color: #495057;
+    }
+    .form-check-input:checked {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .date-icon, .ticket-icon {
+      margin-right: 10px;
+      color: #007bff;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3 class="mb-4">Pesan Tiket Anda</h3>
+    <form>
+
+      <div class="form-group">
+        <label for="tanggalPemesanan" class="form-label">
+          <i class="bi bi-calendar-event-fill date-icon"></i> Pilih Tanggal
+        </label>
+        <input type="text" class="form-control" id="tanggalPemesanan" placeholder="Klik untuk memilih tanggal" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="jumlahTiket" class="form-label">
+          <i class="bi bi-ticket-perforated-fill ticket-icon"></i> Jumlah Tiket
+        </label>
+        <input type="number" class="form-control" id="jumlahTiket" min="1" value="1" required>
+      </div>
+
+      <div class="form-check form-group">
+        <input class="form-check-input" type="checkbox" id="syaratKetentuan" required>
+        <label class="form-check-label" for="syaratKetentuan">
+          Saya setuju dengan <a href="#" target="_blank">syarat dan ketentuan</a>.
+        </label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">
+          Pesan Sekarang
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $("#tanggalPemesanan").datepicker({
+        dateFormat: "dd-mm-yy",
+        minDate: 0
+      });
+    });
+  </script>
+</body>
+</html>
